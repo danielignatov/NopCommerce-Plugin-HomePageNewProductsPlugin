@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: New Products on Home Page Plugin 
+SystemName: Widgets.HomePageNewProductsPlugin
+Version: 1.00
+SupportedVersions: 3.70
+Author: Daniel Ignatov
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.HomePageNewProductsPlugin.dll

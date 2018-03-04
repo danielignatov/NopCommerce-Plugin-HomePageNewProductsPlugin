@@ -1,0 +1,33 @@
+﻿@using Nop.Web.Framework.UI
+@using System.Web.Mvc
+
+@model IEnumerable<Nop.Plugin.Widgets.HomePageNewProductsPlugin.Models.LatestProductModel>
+
+@{
+    Layout = "";
+}
+
+<div class="product-grid home-page-product-grid">
+    <div class="title">
+        <strong>@T("Plugins.Widgets.HomePageNewProductsPlugin.LatestProducts")</strong>
+    </div>
+    <div class="item-grid">
+        @foreach (var product in Model)
+            {
+            <div class="item-box">
+                <div class="product-item" data-productid="@product.Id">
+                    <div class="picture">
+                        <a href="@Url.RouteUrl("Product", new { SeName = product.SeName })" title="@product.Name">
+                            <img alt="@product.Name" src="data:image/png;base64,@System.Convert.ToBase64String(product.Picture.Picture.PictureBinary)" title="@product.Name" />
+                        </a>
+                    </div>
+                    <div class="details">
+                        <h2 class="product-title">
+                            <a href="@Url.RouteUrl("Product", new { SeName = product.SeName })">@product.Name</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
