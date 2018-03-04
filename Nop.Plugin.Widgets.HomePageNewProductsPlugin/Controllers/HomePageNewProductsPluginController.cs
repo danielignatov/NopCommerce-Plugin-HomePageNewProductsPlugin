@@ -103,6 +103,7 @@ namespace Nop.Plugin.Widgets.HomePageNewProductsPlugin.Controllers
                   };
                   return latestModel;
               })
+              .Where(i => i.Picture != null)
               .ToList();
 
             return View("~/Plugins/Widgets.HomePageNewProductsPlugin/Views/HomePageNewProductsPlugin/PublicInfo.cshtml", productsModel);
